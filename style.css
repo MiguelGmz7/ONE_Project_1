@@ -70,6 +70,9 @@ body::before {
 .container__texto-azul {
     color: #1875E8;
 }
+.container__texto-rojo {
+    color: #F81F1F;
+}
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
