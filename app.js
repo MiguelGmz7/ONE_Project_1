@@ -1,13 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-/*
-Este event listener nos permite correr el script en cuanto
-los elementos del DOM se hayan colocado, despues correra 
-el script, esto nos permitira modificarlos 
-*/
-    let numero_s = Math.floor(Math.random() * 10) + 1;
-    // numero secreto del 1 al 10
-    console.log(numero_s);
-    let numero_u;
+let numero_s = Math.floor(Math.random() * 10) + 1;
+// numero secreto del 1 al 10
+console.log(numero_s);
+let numero_u = 0;
+let count = 0;
+
+var load = function() {
+    /*
+    Este event listener nos permite correr el script en cuanto
+    los elementos del DOM se hayan colocado, despues correra 
+    el script, esto nos permitira modificarlos 
+    */
 
     do{
         numero_u = Number(prompt("ingresa un numero entre 1 y 10"));
@@ -24,7 +26,7 @@ el script, esto nos permitira modificarlos
         trofeo.src = "./img/trophy.png" //modificamos la "src" de la imagen, para así cambiarla
         mensaje1.classList.add("container__texto-azul"); // agregamos la clase css container__texto-azul
         mensaje1.textContent = "Felicidades!";
-        mensaje2.innerHTML = "Desfraste el numero secreto";
+        mensaje2.innerHTML = "Descifraste el numero secreto en " + count +" intentos";
         // podemos usar (textcontent o innerhtml) para modificar el texto
     }
     else{
@@ -39,7 +41,18 @@ el script, esto nos permitira modificarlos
             mensaje1.textContent = "Intentalo de nuevo"
             mensaje2.innerHTML = "El numero es mayor!";
         }
-        
     }
 
+} 
+
+document.addEventListener('DOMContentLoaded', function() {
+    load();
 });
+
+
+var return_b = function() {
+    if(numero_s != numero_u){
+        count++;
+        load();
+    }
+}

@@ -79,6 +79,14 @@ h1 {
     font-size: 72px;
 }
 
+.return {
+    width: 95px;
+    height: 95px; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 h2,
 p,
 button {
