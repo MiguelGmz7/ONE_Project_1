@@ -26,7 +26,7 @@ var load = function() {
         trofeo.src = "./img/trophy.png" //modificamos la "src" de la imagen, para así cambiarla
         mensaje1.classList.add("container__texto-azul"); // agregamos la clase css container__texto-azul
         mensaje1.textContent = "Felicidades!";
-        mensaje2.innerHTML = "Descifraste el numero secreto en " + count +" intentos";
+        mensaje2.innerHTML = "Descifraste el numero secreto en " + count + (count > 1 || count == 0 ? " intentos" : " intento");
         // podemos usar (textcontent o innerhtml) para modificar el texto
     }
     else{
